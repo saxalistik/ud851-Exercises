@@ -5,6 +5,7 @@ android {
     buildToolsVersion "24.0.1"
 
     defaultConfig {
+        applicationId "com.example.android.asynctaskloader"
         minSdkVersion 10
         targetSdkVersion 24
         versionCode 1
