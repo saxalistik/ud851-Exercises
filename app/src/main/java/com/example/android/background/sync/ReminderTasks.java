@@ -4,25 +4,27 @@ import android.content.Context;
 
 import com.example.android.background.utilities.PreferenceUtilities;
 
-// COMPLETED (1) Create a class called ReminderTasks
 public class ReminderTasks {
 
-    //  COMPLETED (2) Create a public static constant String called ACTION_INCREMENT_WATER_COUNT
     public static final String ACTION_INCREMENT_WATER_COUNT = "increment-water-count";
+    //  TODO (48) Declare and initialize a static final String variable called ACTION_CHARGING_REMINDER
+    //  TODO (49) Declare and initialize a static final String variable called ACTION_WIFI_REMINDER
 
-    //  COMPLETED (6) Create a public static void method called executeTask
-//  COMPLETED (7) Add a Context called context and String parameter called action to the parameter list
     public static void executeTask(Context context, String action) {
-//      COMPLETED (8) If the action equals ACTION_INCREMENT_WATER, call this class's incrementWaterCount
         if (ACTION_INCREMENT_WATER_COUNT.equals(action)) {
             incrementWaterCount(context);
         }
+//      TODO (54) If the action is the charging reminder action, call issueChargingReminder
+//      TODO (55) If the action is the WiFi reminder action, call issueWifiReminder
     }
 
-    //  COMPLETED (3) Create a private static void method called incrementWaterCount
-//  COMPLETED (4) Add a Context called context to the argument list
     private static void incrementWaterCount(Context context) {
-//      COMPLETED (5) From incrementWaterCount, call the PreferenceUtility method that will ultimately update the water count
         PreferenceUtilities.incrementWaterCount(context);
     }
+
+//  TODO (50) Create a private static void method call issueWifiReminder
+//  TODO (51) Within this method, increment the proper reminder count and remind the user with the WiFi reminder
+
+//  TODO (52) Create a private static void method call issueChargingReminder
+//  TODO (53) Within this method, increment the proper reminder count and remind the user with the charging reminder
 }

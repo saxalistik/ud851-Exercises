@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements
         updateChargingReminderCount();
         updateWiFiReminderCount();
 
+//      TODO (86) Initialize the ReminderUtility class
+
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.registerOnSharedPreferenceChangeListener(this);
     }
@@ -89,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements
         mToast = Toast.makeText(this, R.string.water_chug, Toast.LENGTH_SHORT);
         mToast.show();
 
-//      COMPLETED (15) Start WaterReminderIntentService to increment the water count when the button is pressed
         Intent incrementWaterCountIntent = new Intent(this, WaterReminderIntentService.class);
         incrementWaterCountIntent.setAction(ReminderTasks.ACTION_INCREMENT_WATER_COUNT);
         startService(incrementWaterCountIntent);
