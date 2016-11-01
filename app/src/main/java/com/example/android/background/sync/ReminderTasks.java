@@ -11,7 +11,8 @@ public class ReminderTasks {
     static final String ACTION_WIFI_REMINDER = "wifi-reminder-tag";
     static final String ACTION_CHARGING_REMINDER = "charging-reminder-tag";
 
-    //  TODO (2) Add a public static constant called ACTION_DISMISS_NOTIFICATION
+    //  COMPLETED (2) Add a public static constant called ACTION_DISMISS_NOTIFICATION
+    public static final String ACTION_DISMISS_NOTIFICATION = "dismiss-notification";
 
     public static void executeTask(Context context, String action) {
         if (ACTION_INCREMENT_WATER_COUNT.equals(action)) {
@@ -20,13 +21,18 @@ public class ReminderTasks {
             issueChargingReminder(context);
         } else if (ACTION_WIFI_REMINDER.equals(action)) {
             issueWifiReminder(context);
+//      COMPLETED (3) If the user ignored the reminder, clear the notification
+        } else if (ACTION_DISMISS_NOTIFICATION.equals(action)) {
+            NotificationUtils.clearAllNotifications(context);
         }
-//      TODO (3) If the user ignored the reminder, clear the notification
+
     }
 
     private static void incrementWaterCount(Context context) {
         PreferenceUtilities.incrementWaterCount(context);
-//      TODO (4) If the water count was incremented, clear any notifications
+
+//      COMPLETED (4) If the water count was incremented, clear any notifications
+        NotificationUtils.clearAllNotifications(context);
     }
 
     private static void issueWifiReminder(Context context) {
