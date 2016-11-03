@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.background.sync.ReminderTasks;
+import com.example.android.background.sync.ReminderUtility;
 import com.example.android.background.sync.WaterReminderIntentService;
 import com.example.android.background.utilities.PreferenceUtilities;
 
@@ -50,7 +51,8 @@ public class MainActivity extends AppCompatActivity implements
         updateChargingReminderCount();
         updateWiFiReminderCount();
 
-//      TODO (86) Initialize the ReminderUtility class
+//      COMPLETED (86) Initialize the ReminderUtility class
+        ReminderUtility.initialize(this);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.registerOnSharedPreferenceChangeListener(this);
