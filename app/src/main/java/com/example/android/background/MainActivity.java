@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements
         updateChargingReminderCount();
         updateWiFiReminderCount();
 
-//      COMPLETED (86) Initialize the ReminderUtility class
         ReminderUtility.initialize(this);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
